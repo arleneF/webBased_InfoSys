@@ -1,0 +1,83 @@
+1.Telnet HTTP Conversations:
+	1.1. 	type "telnet www.cs.sfu.ca 80" in terminal
+		 	then paste in:
+			 	GET /~ggbaker/470e3/ HTTP/1.1
+				Host: www.cs.sfu.ca
+				Connection: close
+		the status code the server response is: 200
+	1.2.If-modified-since
+			if paste in: 
+				GET /~ggbaker/470e3/ HTTP/1.1
+				Host: www.cs.sfu.ca
+				If-modified-since: Mon, 1 May 2017 00:00:00 GMT
+				Connection: close
+		the status code is: 304 (not modified)
+		this indicate that is not the first time that I make this specific request, therefore it has been cached and is not modified since last time I made the request
+	1.3.Redirect
+			I typed in:	
+				GET /~ggbaker/470e3 HTTP/1.1
+				Host: www.cs.sfu.ca
+				Connection: close
+		the status code is: 301 (moved permanently)
+		the different result is because when you add the slash at the end, the server will look for a directory named 470e3, and most servers do not then try to find a file name of that name. so if make request without slash, server will not to find this directory
+
+2.Command-Line Requests
+	2.1.GET http://www.cs.sfu.ca/~ggbaker/470e3/
+		the result return is:
+			"<!DOCTYPE html>
+			<html lang="en">
+			  <head>
+			    <meta charset="utf-8">
+			    <title>Simple HTML Page</title>
+			  </head>
+			  <body>
+			  <p>This is a simple HTML page for use as an example in a CMPT 470 exercise.</p>
+			  </body>
+			</html>
+
+			Connection closed by foreign host."
+	2.2.GET -esS http://www.cs.sfu.ca/~ggbaker/470e3/
+		(I have to enter a blank line?)
+			"HTTP/1.1 400 Bad Request
+			Date: Thu, 01 Jun 2017 06:15:38 GMT
+			Server: Apache
+			Content-Length: 286
+			Connection: close
+			Content-Type: text/html; charset=iso-8859-1
+
+			<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+			<html><head>
+			<title>400 Bad Request</title>
+			</head><body>
+			<h1>Bad Request</h1>
+			<p>Your browser sent a request that this server could not understand.<br />
+			</p>
+			<hr>
+			<address>Apache Server at www.sfu.ca Port 80</address>
+			</body></html>
+			Connection closed by foreign host."
+	2.3.GET -esS http://www.cs.sfu.ca/~ggbaker/470e3
+		(I have to enter a blank line?)
+			"HTTP/1.1 400 Bad Request
+			Date: Thu, 01 Jun 2017 06:15:54 GMT
+			Server: Apache
+			Content-Length: 286
+			Connection: close
+			Content-Type: text/html; charset=iso-8859-1
+
+			<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+			<html><head>
+			<title>400 Bad Request</title>
+			</head><body>
+			<h1>Bad Request</h1>
+			<p>Your browser sent a request that this server could not understand.<br />
+			</p>
+			<hr>
+			<address>Apache Server at www.sfu.ca Port 80</address>
+			</body></html>
+			Connection closed by foreign host."
+
+		if add "-esS", this allows us to receive response headers along with content (not like only html content when withou -esS)
+		
+3.Developer Tools
+	I promise I played with the developer tools
