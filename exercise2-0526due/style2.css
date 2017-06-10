@@ -1,0 +1,46 @@
+/*reference:https://stackoverflow.com/questions/5186712/stretch-horizontal-ul-to-fit-width-of-div
+*/
+body{
+	min-width: 500px;
+}
+a{
+	text-decoration: none;
+	color: #fff;
+	background-color: #66c;
+	margin-left: 25px;
+	font-family: "times";
+	font-size: 16px;
+	padding-right: 30px; /*this is the place to manipulate*/
+    border: 1px solid #64a;
+	display: block;
+}
+
+#menu li{
+	list-style: none;
+		/*width:200px;*/
+	background-color: #64a;
+	/*table-layout: fixed;*/
+}
+
+#menu{
+	padding: 0;
+	margin: 0;
+	/*float: right;*/
+	position: fixed;
+	top: 1em;
+	right: 1em
+}
+
+@media (max-width: 500px) {
+	#menu {
+    	/*display: none;*/
+    	position: fixed;
+    	left: 1em;
+
+    }
+	body{
+		min-width: 500px;
+		position: fixed;
+		top: 6em;
+	}
+}

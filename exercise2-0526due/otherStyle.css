@@ -1,0 +1,63 @@
+h1{
+	/*https://css-tricks.com/snippets/css/text-dripping-blood/ */
+	text-align: center;
+	font-size: 60px;
+	color:#00CED1;
+	text-shadow:
+	4px 4px 1px  #FFC0CB,
+	4px 6px 1px  #FFB6C1,
+	4px 8px 1px  #FF69B4,
+	4px 10px 1px #FF1493,
+	4px 12px 1px #DB7093,
+	4px 14px 1px #C71585;
+	/*4px 16px 1px #900000,
+	4px 18px 1px #A00000,
+	4px 20px 1px #B00000,
+	4px 22px 1px #C00000;
+	/*4px 24px 1px #D00000,
+	4px 26px 1px #E00000,
+	4px 28px 1px #F00000,
+	4px 30px 1px #FA0000,
+	4px 32px 1px #FB0000,
+	4px 34px 1px #FC0000,
+	4px 36px 1px #FD0000,
+	4px 38px 1px #FE0000,
+	4px 40px 2px #FF0000;*/
+}
+
+#nav{
+	width: 520px;
+	height: 200px;
+	background: #FFC0CB;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#menu{
+	width: 400px;
+	height: 100px;
+	background: #FF69B4;
+	padding: 10px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+}
+
+#menu li{
+	list-style: none;
+	display: inline;
+	padding: 15px;
+}
+
+#menu a{
+	color: black;
+	text-decoration: none;	
+}
+
+h2{
+	/*https://css-tricks.com/snippets/css/blurry-text/*/
+	color: transparent;
+	font-size: 30px;
+   text-shadow: 0 0 5px rgba(1,20,250,0.75);
+}

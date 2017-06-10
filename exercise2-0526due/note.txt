@@ -1,0 +1,4 @@
+Reference for other techniques:
+https://css-tricks.com/snippets/css/text-dripping-blood/ 
+https://css-tricks.com/snippets/css/blurry-text/
+

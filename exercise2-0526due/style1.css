@@ -1,0 +1,56 @@
+body{
+	background-color: #228;
+}
+
+h1{
+	background-color: #FFFFFF;
+	text-align: center;
+	font-weight: bold;
+	font-size: 40px;
+}
+
+#menu{
+	list-style: none;
+	border: 2px hidden red;
+	/*overflow:hidden;*/
+	width: 600px;
+	margin:0px auto;
+
+}
+
+#menu li{
+	display: inline;
+}
+
+#menu li a{
+	background-color: #bbb;
+	color: black;
+	font-size: 19px;
+	padding: 5px;
+	text-decoration: underline;
+	float: left;
+	/*margin-right: 5px;*/
+	margin-right: 1.7em;
+}
+
+#menu li a:hover{
+	background-color: #FFF;
+}
+
+#main{
+	background-color: #FFF;
+	float: left;
+	padding-left: 1em;
+}
+
+@media (max-width: 630px) {
+	#menu li{
+    	display: table;
+    }
+
+	#main{
+		min-width: 500px;
+		position: fixed;
+		top: 17em;
+	}
+}
